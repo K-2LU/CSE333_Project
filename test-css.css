@@ -1,0 +1,56 @@
+/* Global styles to reset default margin and padding */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex; /* Use flex to align divs horizontally */
+    gap: 20px; /* Add space between divs */
+    justify-content: center; /* Center horizontally */
+    max-width: 1000px; /* Set a maximum width for the container */
+    margin: 0 auto;
+  }
+  
+  .thumb-doctor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Equal width for all doctors */
+    max-width: 300px; /* Adjust as needed */
+  }
+  
+  #dp {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .name {
+    font-size: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .details {
+    margin-top: 5px;
+  }
+  
+  .degree {
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+  
+  .college {
+    font-size: 14px;
+    color: #666;
+  }
+  
