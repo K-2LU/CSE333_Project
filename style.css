@@ -287,7 +287,7 @@ body   {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
+    border-right: 1px solid #ebebeb;
     width: 45%;
 }
 
@@ -308,4 +308,16 @@ body   {
 .name:hover, .id:hover,.speciality:hover, .degree:hover, .academics:hover, .room-no:hover    {
     transform: translateY(-03px);
     font-weight:bold;
+}
+
+.view-image {
+    display: flex;
+    justify-content: center;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 14.5rem;
+    border: 1px solid #ebebeb;
+    box-shadow: 0px 0px 0px 0px #0dc780;
+    overflow: hidden;
+    margin-right: 5rem;
 }
