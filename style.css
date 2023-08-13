@@ -118,20 +118,23 @@ body   {
 }
 
 .content    {
-    position: absolute;
+    position: relative;
     top:10%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     width: 99%;
     height: max-content;
-    display: flex;
+    display: flex;;
     flex-direction: column;
     justify-content: space-evenly;
+    gap: 1.2rem;
     
     align-items: center;
     border-radius: 10px;
     font-weight: 700;
     font-size: 1.25rem;
+
+    padding-top: 3rem;
 }
 
 .content1   {
