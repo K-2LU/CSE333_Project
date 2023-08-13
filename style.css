@@ -119,7 +119,7 @@ body   {
 
 .content    {
     position: absolute;
-    top:35%;
+    top:10%;
 
     width: 99%;
 
@@ -163,4 +163,41 @@ body   {
     font-size: 18px;
 
     color: #fff;
+}
+
+.department {
+    display: inline;
+    position: relative;
+    
+    height: 10%;
+    width: 99%;
+
+    
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px #949494;
+
+    padding-left: 15px;
+    font-family: 'Inter';
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.department .thumb-doctor {
+    
+    display: inline;
+    position: inherit;
+    background-color: red;
+    
+    height: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px #949494;
+}
+
+.department .thumb-doctor .name {
+    font-family: 'Helvetica';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 100;
 }

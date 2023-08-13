@@ -1,0 +1,19 @@
+version 0.001:
+    - construction of the basic template
+    - home page added
+        -  home page shows quotes of memorable doctors of history
+
+    Bug(s):
+        - some content is too wide for the page size;
+
+version 0.12082023a:
+    - git
+
+    Fixe(s): 
+    Bug(s):
+        - some content is too wide for the page size;
+
+version 0.12082023b:
+    
+    Fixe(s):
+        - contents are now appropriately wide
