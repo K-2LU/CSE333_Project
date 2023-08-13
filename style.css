@@ -120,6 +120,7 @@ body   {
 .content    {
     position: absolute;
     top:10%;
+    border: 1px solid red;
 
     width: 99%;
     height: max-content;
@@ -171,14 +172,21 @@ body   {
     /* flex-wrap: wrap; */
     align-content: flex-start;
     gap: 1rem;
+    overflow-y: scroll;
 
     position: relative;
-    height: 35rem;
+    height: 28rem;
     width: 98%;
     
-    
+    padding-bottom: 1.2rem;
     border: 1px solid #ebebeb;
     border-radius: 5px;
+
+    /* background: linear-gradient(to bottom, transparent, white); */
+    
+  background: linear-gradient(to bottom, transparent, white);
+  /* opacity: 0; */
+  /* transition: opacity 0.3s ease; */
 }
 
 .dept-name  {
@@ -207,9 +215,13 @@ body   {
     overflow-y: scroll;
     
     padding-left: 15px;
+    /* padding-bottom: 10px; */
+    /* margin-bottom: 15px; */
+    max-lines: 10 ;
     font-family: 'Inter';
     text-decoration: none;
     font-size: 20px;
+
 }
 
 
