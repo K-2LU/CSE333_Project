@@ -79,7 +79,6 @@ body   {
     color: #fff;
 }
 
-
 .top-bar .log .signup    {
     height: 60%;
     
@@ -225,7 +224,6 @@ body   {
 
 }
 
-
 .department-doctors .thumb-doctor {
     display: flex;
     flex-direction: column;
@@ -312,6 +310,7 @@ body   {
 }
 
 .sub-container  {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -384,13 +383,26 @@ body   {
     font-weight: 200;
 }
 
+.login-container    {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-items: center;
+    align-items: center;
+
+    width: 80%;
+    position: relative;
+    border: 1px dotted red;
+}
+
 .labelInfo  {
     position: absolute;
     font-size: 1em;
     color: #757575;
     padding-left: 0.5em;
     padding-top: 0.3em;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 input   {
@@ -400,19 +412,7 @@ input   {
     border-radius: 0.3em;
     transition: 0.5s ease;
     z-index: 10;
-}
-
-input:focus, input:valid    {
-    color: #0dc780;
-    border: 2px solid #0dc780;
-}
-
-input:focus + .labelInfo, 
-input:valid + .labelInfo   {
-    color: #0dc780;
-    border: 2px solid #0dc780;
-    transform: translate(-10px, -10px) scale(0.66);
-    z-index: 10;
+    padding-left: 0.5rem;
 }
 
 .message     {
