@@ -32,73 +32,71 @@
         
     <div class="content">
         <div class="sub-container">
-            <div class="book-container">
 
-                <div class="doctor-details">
+                <div class="book-container">
+
+                    <div class="doctor-details">
                     
-                    <div class="input-box">
-                        <span class="details">Doctor ID:</span>
-                        <select name="doctor-id" id="id" class="select-options">
-                            <option value="id1">0010101</option>
-                            <option value="id2">0010102</option>
-                        </select>
-                    </div>
-    
-                    <div class="input-box">
-                        <span class="details">Doctor Name: </span>
-                        <span class="details">Munna Vai</span>
-                    </div>
-    
-                    <div class="input-box">
-                        <span class="details">Department: </span>
-                        <span class="details">Nose, Ear and Throat </span>
+                        <div class="input-box">
+                            <label for="doctor-id" class="details">Doctor ID:</label>
+                            <select name="doctor-id" id="doctor-id" class="select-options">
+                                <option value="id1">0010101</option>
+                                <option value="id2">0010102</option>
+                            </select>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Doctor name: `${doctorName}`</label>
+                        </div>
+                        
+                        <div class="input-box">
+                            <label>Department: `${department}`</label>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Room No.: `${room}`</label>
+                        </div>
+
                     </div>
                     
-                    <div class="input-box">
-                        <span class="details">Room no.: </span>
-                        <span class="details">420</span>
+                    <div class="patient-details">
+                        
+                        <div class="input-box">
+                            <div class="labelInfo">Patient Name: </div>
+                            <input type="text" id="patientName">
+                        </div>
+                        
+                        <div class="input-box">
+                            <div class="labelInfo">Phone No.: </div>
+                            <input type="text" id="phoneNo">
+                        </div>
+                        
+                        <div class="input-box">
+                            <div class="labelInfo"> Age: </div>
+                            <input type="text" id="age">
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="sex">Sex: </label>
+                            <select name="sex" id="sex" class="select-options">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-box">
+                            <label for="date">Date: </label>
+                            <input type="date" id="date">
+                        </div>
+        
                     </div>
-    
+                    
                 </div>
-    
-                <div class="patient-details">
-                    
-                    <div class="input-box">
-                        <span class="details">Patient Name: </span>
-                        <input type="text" placeholder="Patient Name" class="input-box">
-                    </div>
-    
-                    
-                    <div class="input-box">
-                        <span class="details">Phone Number: </span>
-                        <input type="text" placeholder="Phone No." class="input-box">
-                    </div>
-                    
-                    <div class="input-box">
-                        <span class="details">Age: </span>
-                        <input type="text" placeholder="Age" class="input-box">
-                    </div>
-    
-                    <div class="input-box">
-                        <span class="details">Sex: </span>
-                        <select name="doctor-id" id="id" class="select-options">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
-                    
-                    <div class="input-box">
-                        <span class="details">Date: </span>
-                        <input type="date" placeholder="date" class="input-date">
-                    </div>
-    
+        
+                <div class="content1">
+                    <a href="#" class="book">Submit</a>
                 </div>
-                
-            </div>
-    
-            <div class="content1">
-                <a href="#" class="book">Submit</a>
-            </div>
+
         </div>
 
     </div>

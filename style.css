@@ -315,7 +315,8 @@ body   {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    gap: 2em;
+    width: 75%;
 
     box-shadow: 0px 0px 10px 0px #ebebeb;
     border-radius: 10px;
@@ -342,23 +343,106 @@ body   {
     flex-wrap: wrap;
 
     width: 80%;
-    gap: 3rem;
+    /* gap: 3rem; */
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: center;
     border: 1px dotted #0dc780;
     margin-top: 5rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 
     padding-top: 3.5rem;
-    padding-bottom: ;
+    padding-bottom: 1.5rem;
 }
 
 .doctor-details {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: 0.8rem;
+
     font-family: 'Helvetica';
-    font-size: 18px;
+    font-size: 1.2em;
+    font-style: normal;
+    /* font-weight: 200; */
+
+    border-right: 1px solid #ebebeb;
+    /* border: 1px solid blue; */
+    margin-right: 5rem;
+    padding-right: 5rem;
+}
+
+.patient-details    {
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    font-family: 'Helvetica';
+    font-size: 1.1em;
     font-style: normal;
     font-weight: 200;
+}
+
+.labelInfo  {
+    position: absolute;
+    font-size: 1em;
+    color: #757575;
+    padding-left: 0.5em;
+    padding-top: 0.3em;
+    transition: 0.3s ease;
+}
+
+input   {
+    outline: none;
+    font-size: 1.2em;
+    border: 2px solid #ebebeb;
+    border-radius: 0.3em;
+    transition: 0.5s ease;
+    z-index: 10;
+}
+
+input:focus, input:valid    {
+    color: #0dc780;
+    border: 2px solid #0dc780;
+}
+
+input:focus + .labelInfo, 
+input:valid + .labelInfo   {
+    color: #0dc780;
+    border: 2px solid #0dc780;
+    transform: translate(-10px, -10px) scale(0.66);
+    z-index: 10;
+}
+
+.message     {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    width: 80%;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px dotted #0dc780; */
+    margin-top: 5rem;
+    /* margin-bottom: 1rem; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px -3px #ebebeb;
+    padding-top: 3.5rem;
+    padding-bottom: 1.5rem;
+    font-family: 'Poppins';
+    padding-bottom: 3.5rem;
+}
+
+.greet  {
+    padding-left: 2rem;
+    padding-right: 1rem;
+}
+.bolder {
+    font-weight: 700;
+}
+span   {
+    font-weight: 700;
+    background-color: #fff700;
 }
