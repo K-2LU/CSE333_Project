@@ -173,7 +173,6 @@ body   {
 .accordion {
     margin: 60px auto;
     width: 90%;
-    /* box-shadow: 0px 0px 10px -3px #f6acac; */
   }
   
   .accordion li {
@@ -207,7 +206,7 @@ body   {
     display: none;
   }
   
-  .accordion .content {
+  .accordion .acc-content {
     color: #555;
     padding: 0 10px;
     line-height: 26px;
@@ -218,7 +217,7 @@ body   {
     transition: max-height ease 1.0s, padding 1.0s;
   }
   
-  .accordion input[type="radio"]:checked + label + .content {
+  .accordion input[type="radio"]:checked + label + .acc-content {
     
     max-height: 800px;
     padding: 10px 10px 20px;
