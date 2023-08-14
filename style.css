@@ -1,3 +1,7 @@
+*   {
+    font-family: 'Poppins', 'Helvetica';
+}
+
 body   {
     background-image: linear-gradient(bottom, #e4fff6, #ffffff);
 }
@@ -147,7 +151,7 @@ body   {
     /* transition: background-image 0.3s ease; */
     transition: transform 0.3s ease 0s, box-shadow 0.5s ease 0s;
     border-radius: 5px;
-    width: 5rem;
+    max-width: 20rem;
     /* padding-left: 10px; */
     text-align: center;
 }
@@ -166,6 +170,65 @@ body   {
     color: #fff;
 }
 
+.accordion {
+    margin: 60px auto;
+    width: 90%;
+    /* box-shadow: 0px 0px 10px -3px #f6acac; */
+  }
+  
+  .accordion li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 3px 3px 10px -4px #191919,
+                -3px -3px 10px -4px #ffffff;
+  }
+  
+  .accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  label:before {
+    content: '+';
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  .accordion .content {
+    color: #555;
+    padding: 0 10px;
+    line-height: 26px;
+  
+    max-height: 0;
+    overflow: hidden;
+  
+    transition: max-height ease 1.0s, padding 1.0s;
+  }
+  
+  .accordion input[type="radio"]:checked + label + .content {
+    
+    max-height: 800px;
+    padding: 10px 10px 20px;
+  }
+  
+  .accordion input[type="radio"]:checked + label::before{
+    content: '-';
+    font-weight: 700;
+  }
+
 .department {
     display: flex;
     flex-direction: column;
@@ -178,8 +241,8 @@ body   {
     height: 28rem;
     width: 98%;
     
-    padding-bottom: 1.2rem;
-    border: 1px solid #ebebeb;
+    /* padding-bottom: 1.2rem; */
+    /* border: 1px solid #ebebeb; */
     border-radius: 5px;
 
     /* background: linear-gradient(to bottom, transparent, white); */
@@ -188,7 +251,7 @@ body   {
   /* opacity: 0; */
   /* transition: opacity 0.3s ease; */
 }
-
+/* 
 .dept-name  {
     position: relative;
     
@@ -197,8 +260,8 @@ body   {
 
     font-family: 'Helvetica';
     font-size: 2em;
-    /* left: -60%; */
-}
+    left: -60%;
+} */
 .department-doctors {
 
     display: flex;
