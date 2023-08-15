@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Name</title>
+    <title>Patient name</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
 
         <div class="legend">
             <img src="./images/image-removebg-preview.png" alt="logo" height="20px">
+            
             <form action="#" class="button">
                 <button type="submit">Doctor</button>
             </form>
@@ -24,14 +25,11 @@
             <a href="#" class="button">Pricing</a>
             <a href="#" class="button">Contact Us</a>
         </div>
-
-        <div class="hero">
-        </div>
         
         <div class="log">
             <!-- if logged in, hero name visible -->
             <a href="#" class="hero-name">User Name</a>
-            <a href="#" class="log-out">Log in</a>
+            <a href="#" class="log-out">Log Out</a>
         </div>
 
     </div>
@@ -41,102 +39,60 @@
         <div class="view-profile">
             <div class="view-info">
                 <div class="name" id="name">@{Name should be here}</div>
-                <div class="id" id="id">ID</div>
-                <div class="speciality" id="">Speciality</div>
-                <div class="degree" id="name">Degrees</div>
-                <div class="academics" id="name">Medical College name</div>
-                <div class="room-no" id="name">XXYY</div>
+                <div class="age" id="age">Speciality</div>
+
                 <div class="content1">
                     <a href="#" class="book">Book an Appointment</a>
                 </div>
-            </div>
-            <div class="view-image">
-                <img src="./images/munnavai.png" alt="doctor">
             </div>
         </div>
 
         <ul class="accordion">
             <li>
                 <input type="radio" name="accordion" id="first" checked>
-                <label for="first">Visits due</label>
+                <label for="first">Upcoming Appointments</label>
 
                 <div class="acc-content">
                     <div class="visit-due">
                         <div class="patient-info">
-                            Patient Name: John Wick <br>
-                            Age: 40 <br>
-                            Sex: Male <br>
+                            Doctor Name: John Wick <br>
+                            Department: {department} <br>
+                            Room no.: {roomno} <br>
                             Date and Time: 
                         </div>
                         
-                        <div class="button-back">
+                        <div class="button-cancel">
                             <form action="#">
-                                <div class="book">Mark as Done</div>
+                                <button type="submit">Cancel Appointment</button>
                             </form>
                         </div>
                     </div>
-                    <div class="visit-due">
-                        <div class="patient-info">
-                            Patient Name: John Wick <br>
-                            Age: 40 <br>
-                            Sex: Male <br>
-                            Date and Time: 
-                        </div>
-                        
-                        <div class="button-back">
-                            <form action="#">
-                                <div class="book">Mark as Done</div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="visit-due">
-                        <div class="patient-info">
-                            Patient Name: John Wick <br>
-                            Age: 40 <br>
-                            Sex: Male <br>
-                            Date and Time: 
-                        </div>
-                        
-                        <div class="button-back">
-                            <form action="#">
-                                <div class="book">Mark as Done</div>
-                            </form>
-                        </div>
-                    </div>
+
                 </div>
 
             </li>
     
             <li>
                 <input type="radio" name="accordion" id="second">
-                <label for="second">Visits done</label>
+                <label for="second">Past Appointments</label>
 
                 <div class="acc-content">
                     <div class="visit-done">
                         <div class="patient-info">
-                            Patient Name: John Wick <br>
-                            Age: 40 <br>
-                            Sex: Male <br>
+                            Doctor Name: John Wick <br>
+                            Department: {department} <br>
+                            Room no.: {roomno} <br>
                             Date and Time: 
-                            
                         </div>
-<!--                         
-                        <div class="button-back">
-                            <div class="book">Done</div>
-                        </div> -->
                     </div>
 
                     <div class="visit-done">
                         <div class="patient-info">
-                            Patient Name: John Wick <br>
-                            Age: 40 <br>
-                            Sex: Male <br>
+                            Doctor Name: John Wick <br>
+                            Department: {department} <br>
+                            Room no.: {roomno} <br>
                             Date and Time: 
                         </div>
-<!--                         
-                        <div class="button-back">
-                            <div class="book">Done</div>
-                        </div> -->
                     </div>
                 </div>
             </li>

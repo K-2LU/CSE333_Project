@@ -30,6 +30,7 @@
 
     height: 60%;
 
+    padding-top: 0.5rem;
     margin-top: 5px;
     margin-left: 10px;
     margin-right: 10px;
@@ -50,26 +51,6 @@
 .button:hover   {
     transform: translateY(-03px);
     border-color: #0dc780;
-}
-
-.top-bar .hero-name {
-    height: 60%;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
-
-    transition: transform 0.3s ease 0s;
-    border-bottom: 4px solid #fff;
-    color: #000000;
-    /* margin-bottom: 0.3rem; */
-
-    text-decoration: none;
-}
-.top-bar .hero-name:hover   {
-    transform: translateY(-03px);
-    border-color: #0dc780;
-
 }
 
 .top-bar .log {
@@ -175,12 +156,11 @@
 }
 
 .welcome    {
-    position: absolute;
-    top: 25%;
     
     width: 99%;
     /* background-color: #0bb876; */
-    padding-bottom: 20px;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
@@ -190,10 +170,10 @@
     align-items: center;
     justify-content: center;
 
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     
     background-color: #0dc780;
     background-image: linear-gradient(to bottom, #11d087, #0bb876);
@@ -672,7 +652,41 @@ span   {
     transform: translateY(-5px);
     box-shadow: 0px 0px 10px 0px #0dc780;
 }
-/* 
-button  {
-    bu
-} */
+
+.button-cancel  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 0.5rem;
+
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+    color: #000;
+    background-image: linear-gradient(to bottom, #ffffff, #ebebeb);
+
+    border: 2px solid #cacaca;
+    transition: transform 0.3s ease 0s, box-shadow 0.5s ease 0s;
+    border-radius: 5px;
+    max-width: 10rem;
+    max-height: 5rem;
+    text-align: center;
+
+}
+
+.button-cancel:hover {
+    /* background-image: linear-gradient(to bottom, #0fac70, #08925d); */
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px 0px #afafaf;
+}
+
+button[type="submit"] {
+    background-color: transparent;
+    /* color: #fff; */
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
