@@ -137,9 +137,8 @@ body   {
 
 .content1   {
     display: flex;
+    align-items: center;
     justify-content: center;
-    /* position: absolute;
-    top: 25%; */
 
     padding-right: 5px;
     padding-left: 5px;
@@ -148,7 +147,7 @@ body   {
     
     background-color: #0dc780;
     background-image: linear-gradient(to bottom, #11d087, #0bb876);
-    /* transition: background-image 0.3s ease; */
+
     transition: transform 0.3s ease 0s, box-shadow 0.5s ease 0s;
     border-radius: 5px;
     max-width: 20rem;
@@ -165,13 +164,13 @@ body   {
 .book   {
     font-family: 'Inter';
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.2em;
 
     color: #fff;
 }
 
 .accordion {
-    margin: 60px auto;
+    /* margin-right: 60px; */
     width: 90%;
   }
   
@@ -207,6 +206,12 @@ body   {
   }
   
   .accordion .acc-content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     color: #555;
     padding: 0 10px;
     line-height: 26px;
@@ -240,27 +245,9 @@ body   {
     height: 28rem;
     width: 98%;
     
-    /* padding-bottom: 1.2rem; */
-    /* border: 1px solid #ebebeb; */
     border-radius: 5px;
-
-    /* background: linear-gradient(to bottom, transparent, white); */
-    
-  /* background: linear-gradient(to bottom, transparent, white); */
-  /* opacity: 0; */
-  /* transition: opacity 0.3s ease; */
 }
-/* 
-.dept-name  {
-    position: relative;
-    
-    margin-top: 1.2rem;
-    margin-left: 1.2rem;
 
-    font-family: 'Helvetica';
-    font-size: 2em;
-    left: -60%;
-} */
 .department-doctors {
 
     display: flex;
@@ -335,13 +322,13 @@ body   {
     justify-content: space-evenly;
 
     gap: 3rem;
-    height: 90%;
+    /* height: 80%; */
     width: 98%;
 
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px #ebebeb;
-    padding-top: 15rem;
-    padding-bottom: 15rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .view-info  {
@@ -506,3 +493,85 @@ span   {
     font-weight: 700;
     background-color: #fff700;
 }
+
+.visit-due  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    border: 2px solid #ebebeb;
+    border-radius: 10px;
+    width: 98%;
+    max-height: 10rem;
+    margin-bottom: 1rem;
+}
+
+.visit-done {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    border: 2px solid #6a00ff;
+    background: linear-gradient(to bottom, #6a00ff, #4f09b1);
+    color: #fff;
+    border-radius: 10px;
+    width: 98%;
+    max-height: 10rem;
+    margin-bottom: 1rem;
+}
+
+.patient-info   {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    font-family: 'Helvetica';
+    font-size: 1.1em;
+    font-style: normal;
+    font-weight: 200;
+
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.button-back    {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+    background-color: #0dc780;
+    background-image: linear-gradient(to bottom, #11d087, #0bb876);
+
+    transition: transform 0.3s ease 0s, box-shadow 0.5s ease 0s;
+    border-radius: 5px;
+    max-width: 20rem;
+    max-width: 10rem;
+    text-align: center;
+}
+.button-back:hover {
+    /* background-image: linear-gradient(to bottom, #0fac70, #08925d); */
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px 0px #0dc780;
+}
+/* 
+button  {
+    bu
+} */
