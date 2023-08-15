@@ -53,6 +53,26 @@
     border-color: #0dc780;
 }
 
+.top-bar .hero-name {
+    height: 60%;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+
+    transition: transform 0.3s ease 0s;
+    border-bottom: 4px solid #fff;
+    color: #000000;
+    /* margin-bottom: 0.3rem; */
+
+    text-decoration: none;
+}
+.top-bar .hero-name:hover   {
+    transform: translateY(-03px);
+    border-color: #0dc780;
+
+}
+
 .top-bar .log {
     display: flex;
     justify-content: space-evenly;
