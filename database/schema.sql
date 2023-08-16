@@ -31,9 +31,10 @@ create table usertype	(
 );
 
 create table visit	(
+	id varchar(20) primary key,
 	p_id varchar(20),
     d_id varchar(20),
-    a_time datetime,
+    a_time datetime, 
     a_status boolean
 );
 
