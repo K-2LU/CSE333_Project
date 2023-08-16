@@ -21,3 +21,8 @@ insert into doctor(id, name, degree, college, phone, password, dept_id, room_no)
 insert into visit(id, p_id, d_id, a_time, a_status) values ('002', '001', '002', '2023-11-09 00:00', false);
 
 select * from visit;
+SELECT * FROM hospital.usertype;
+
+insert into usertype(id, u_type, password) values('DOC-0001', 'Doc', 'ibn_sina');
+insert into usertype(id, u_type, password) values('DOC-0002', 'Doc', 'munnavai');
+insert into usertype(id, u_type, password) values('DOC-0003', 'Doc', 'house1234');
