@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="content">
+
+        <div class="login-container">
+            <img src="./images/gh_logo.png" alt="" height="50px">
+
+            <form action="/forgot" method="post">
+
+
+                <div class="input-box">
+                    <div class="labelInfo">Enter Your Phone No.: </div>
+                    <input type="text" id="identity" placeholder="Phone Number or ID" name="id" required>
+                </div>
+
+                <div class="login-button">
+                    <button class="book" type="submit">Submit</button>
+                </div>
+
+            </form>
+
+            <!-- upon retirval -->
+            <%if(key.length>0){%>
+                <div class="login-key">
+                    Your key is: <%=key%>
+                </div>
+             <%} 
+             else if(flag===1) {%>
+                <div class="login-key">
+                    User doesn't exist.
+                </div>
+            <%}%>
+
+
+            <a href="/login">Log in to your profile</a>
+        </div>
+
+    </div>
+    <script src="style.js"></script>
+
+</body>
+<script>
+
+</script>
+
+</html>

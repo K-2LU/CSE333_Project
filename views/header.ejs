@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="getRandomDoctorQuote()">
+
+    <div class="top-bar" id="top-bar">
+
+        <div class="legend">
+            <a href="/"><img src="/images/image-removebg-preview.png" alt="logo" height="20px"></a>
+            <a href="/doctors" class="button">Doctor</a>
+            <a href="#" class="button">Test</a>
+            <a href="#" class="button">Pricing</a>
+            <a href="#" class="button">Contact Us</a>
+        </div>
+        <div class="log">
+            <!-- if logged in, hero name, log out visible -->
+            <%if(ok===1){ if(uType==="doctor" ) {%>
+                <form action="/doctor-profile" class="hero-name" method="get">
+                    <% }else {%>
+                        <form action="/patient-profile" class="hero-name">
+                            <%}%>
+                                <button type="submit" name="name" value=<%=uId %>><%= uId %></button>
+                        </form>
+                        <%}%>
+
+                            <%if(ok===1){%>
+                                <form action="/logout" class="log-out">
+                                    <button type="submit" name="name" value=<%=uId %>>Log Out</button>
+                                </form>
+                                <%} else{%>
+                                    <a href="/login" class="button">Log In</a>
+                                    <a href="/Register" class="button">Register</a>
+                                    <%}%>
+        </div>
+    </div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="content">
+
+        <div class="login-container">
+
+            <img src="./images/gh_logo.png" alt="" height="50px">
+
+            <form action="/login" method="post">
+
+                <div class="input-box">
+                    <div class="labelInfo">Phone No. or ID: </div>
+                    <input type="text" id="identity" placeholder="Phone Number or ID" name="id" required>
+                </div>
+
+                <div class="input-box">
+                    <div class="labelInfo">Password or Key: </div>
+                    <input type="password" id="password" placeholder="Password or Key" name="pass" required>
+                </div>
+
+                <a href="/forgot" class="forgot">Forgot Password?</a>
+
+                <div class="login-button">
+                    <button class="book" type="submit">Login</button>
+                </div>
+
+            </form>
+
+            <a href="/register">Register</a>
+        </div>
+
+    </div>
+    <script src="style.js"></script>
+
+</body>
+
+</html>

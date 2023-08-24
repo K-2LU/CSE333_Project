@@ -1,0 +1,80 @@
+<%- include("header")%>
+    <div class="content">
+
+        <div class="view-profile">
+            <div class="view-info">
+                <div class="name" id="name"><%=name[0].name%></div>
+
+                <div class="content1">
+                    <a href="/doctors" class="book">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+
+        <ul class="accordion">
+            <li>
+                <input type="radio" name="accordion" id="first" checked>
+                <label for="first">Upcoming Appointments</label>
+
+                <div class="acc-content">
+                    <%for(var i = 0; i<result.length; i++) {
+                        for(var j = 0; j<data.length; j++) {
+                            if(data[j].id === result[i].d_id && result[i].a_status===0) {%>
+                                <div class="visit-due">
+                                    <div class="patient-info">
+                                        Patient Name : <%=result[i].p_name%> <br>
+                                        Doctor Name: <%=data[j].name%> <br>
+                                        Department: <%=data[j].dept_name%> <br>
+                                        Room no.: <%= data[j].room_no%> <br>
+                                        Date and Time:<%=result[i].a_time%>
+                                    </div>
+                        
+                                    <div class="button-cancel">
+                                        <form action="/cancle-appointment" method="post">
+                                            <button type="submit" name="btn" value=<%=result[i].id %> >Cancel Appointment</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            <%}
+                        }
+                        
+                    }%>
+                    
+
+                </div>
+
+            </li>
+
+            <li>
+                <input type="radio" name="accordion" id="second">
+                <label for="second">Past Appointments</label>
+
+                <div class="acc-content">
+                    <%for(var i=0; i<result.length; i++) {
+                        for(var j=0; j<data.length; j++) { 
+                            if(data[j].id===result[i].d_id && result[i].a_status===1) {%>
+                                <div class="visit-due">
+                                    <div class="patient-info">
+                                        Patient Name : <%=result[i].p_name%> <br>
+                                        Doctor Name: <%=data[j].name%> <br>
+                                        Department: <%=data[j].dept_name%> <br>
+                                        Room no.: <%= data[j].room_no%> <br>
+                                        Date and Time:<%=result[i].a_time%>
+                                    </div>
+                    
+                                </div>
+                            <%} 
+                        } 
+                    }%>
+
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- <script src="style.js"></script> -->
+
+</body>
+
+</html>

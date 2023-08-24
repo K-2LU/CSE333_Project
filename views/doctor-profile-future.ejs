@@ -1,0 +1,60 @@
+<%- include("header") %>
+
+    <div class="content">
+
+        <div class="view-profile">
+            <div class="view-info">
+                <div class="name" id="name">Name : <%=data[0].name%>
+                </div>
+                <div class="id" id="id">ID : <%=data[0].id%>
+                </div>
+                <div class="speciality" id="">Speciality : <%=data[0].dept_name%>
+                </div>
+                <div class="degree" id="name">Degrees : <%=data[0].degree%>
+                </div>
+                <div class="academics" id="name">
+                    <%=data[0].college%>
+                </div>
+                <div class="room-no" id="name">Room No. <%=data[0].room_no%>
+                </div>
+                <div class="room-no" id="name"><a href="/history" class="button">History</a></div>
+                <div class="room-no" id="name"><a href="/future" class="button">All due appointments</a></div>
+
+            </div>
+            <div class="view-image">
+                <% var imgDir="./images/" + data[0].id.toString() + ".jpg" %>
+                    <img src="<%=imgDir %>" alt="doctor">
+            </div>
+        </div>
+
+        <ul class="accordion">
+            <li>
+                <input type="radio" name="accordion" id="first" checked>
+                <label for="first">Visits due</label>
+
+                <div class="acc-content">
+                    <%for(var i=0; i<result.length; i++) { if(result[i].a_status===0 ) {%>
+                        <div class="visit-due">
+                            <div class="patient-info">
+                                Patient <%=result[i].p_name%> <br>
+                                    Age: <%=result[i].p_age%> <br>
+                                        Sex: <%=result[i].p_sex%> <br>
+                                            Date and Time: <%=result[i].a_time%>
+                            </div>
+
+                            <div class="button-back">
+                            </div>
+                        </div>
+                        <%} }%>
+                </div>
+
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- <script src="style.js"></script> -->
+
+    </body>
+
+    </html>

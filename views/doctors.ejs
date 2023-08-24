@@ -1,121 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctors</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+<%- include("header") %>
 
-<body onload="getRandomDoctorQuote()">
-
-    <div class="top-bar" id = "top-bar">
-
-        <div class="legend">
-            <img src="./images/image-removebg-preview.png" alt="logo" height="20px">
-            <a href="#" class="button">Doctor</a>
-            <a href="#" class="button">Test</a>
-            <a href="#" class="button">Pricing</a>
-            <a href="#" class="button">Contact Us</a>
-        </div>
-
-        <div class="log">
-            <a href="#" class="login">Log in</a>
-            <a href="#" class="signup">Sign up</a>
-        </div>
-
-    </div>
-        
     <div class="content">
-
-        <div class="department">
-            
-            <div class="dept-name">dept name here</div>
-
-            <div class="department-doctors">
-            
-                <div class="thumb-doctor">
+        
+        <div class="search-bar">
+            <input type="text" id="autocomplete_search" class="form-control form-control-lg"
+                placeholder="Live Search(Doctor Name, Department, ID)" />
     
-                    <img src="./images/doctor.png" alt="doctor" height="100px" id="dp">
-                    <p id="doctor-name" class="name">Munna Vai</p>
-    
-                    <div class="details">
-    
-                        <p class="degree">M.B.B.S.</p>
-                        <p class="college">Osmani Medical College, Sylhet</p>
-                    
-                    </div>
-                    <nav>
-                        <a href="#">View Profile</a><br>
-                        <a href="/form-book">Book an Appointment</a>
-                    </nav>
-    
-                </div>
-    
-            </div>
+            <ul id="search_result" class="search_result"></ul>
         </div>
 
-        <div class="department">
-            
-            <div class="dept-name">dept name here</div>
 
-            <div class="department-doctors">
-            
-                <div class="thumb-doctor">
-    
-                    <img src="./images/doctor.png" alt="doctor" height="100px" id="dp">
-                    <p id="doctor-name" class="name">Munna Vai</p>
-    
-                    <div class="details">
-    
-                        <p class="degree">M.B.B.S.</p>
-                        <p class="college">Osmani Medical College, Sylhet</p>
-                    
-                    </div>
-                    <nav>
-                        <a href="#">View Profile</a><br>
-                        <a href="#">Book an Appointment</a>
-                    </nav>
-    
-                </div>
-    
-            </div>
-        </div>
-        <div class="department">
-            
-            <div class="dept-name">dept name here</div>
+        <ul class="accordion">
+            <% for(var i=0; i<result1.length; i++) { %>
+                <li>
+                    <%if(i===0){%>
+                        <input type="radio" name="accordion" id=<%=result1[i].dept_id%> checked>
+                        <%} else {%>
+                            <input type="radio" name="accordion" id=<%=result1[i].dept_id%>>
+                            <%}%>
 
-            <div class="department-doctors">
-            
-                <div class="thumb-doctor">
-    
-                    <img src="./images/doctor.png" alt="doctor" height="100px" id="dp">
-                    <p id="doctor-name" class="name">Munna Vai</p>
-    
-                    <div class="details">
-    
-                        <p class="degree">M.B.B.S.</p>
-                        <p class="college">Osmani Medical College, Sylhet</p>
-                    
+                                <label for=<%=result1[i].dept_id%>>
+                                    <%=result1[i].dept_name%>
+                                </label>
+
+                                <div class="acc-content">
+                                    <% const dId=result1[i].dept_id%>
+                                        <div class="department">
+                                            <div class="department-doctors">
+
+                                                <% for(var j=0; j<result2.length; j++) {%>
+                                                    <%if(result2[j].dept_id===dId){%>
+                                                        <div class="thumb-doctor">
+                                                            <% var imgDir="./images/" + result2[j].id.toString()
+                                                                + ".jpg" %>
+                                                                <img src="<%=imgDir %>" alt="doctor" height="100px"
+                                                                    id="dp">
+                                                                <p id="doctor-name" class="name">
+                                                                    <%=result2[j].name%>
+                                                                </p>
+
+                                                                <div class="details">
+
+                                                                    <p class="degree">
+                                                                        <%=result2[j].degree%>
+                                                                    </p>
+                                                                    <p class="college">
+                                                                        <%=result2[j].college%>
+                                                                    </p>
+
+                                                                </div>
+                                                                <form action="/doctor-profile-patient" method="post">
+
+                                                                    <div class="login-button">
+                                                                        <button type="submit" class="book" name="name" ,
+                                                                            value=<%=result2[j].id %>>View
+                                                                            Profile</button>
+                                                                    </div>
+                                                                </form>
+                                                                <form action="/form-book" method="post">
+                                                                    <div class="login-button">
+                                                                        <button type="submit" class="book" name="name" ,
+                                                                            value=<%=result2[j].id %>>Book an Appoitment
+                                                                        </button>
+                                                                    </div>
+                                                                </form>
+
+                                                        </div>
+
+                                                        <%}%>
+
+                                                            <%}%>
+
+                                                                <!-- changes made -->
+
+                                            </div>
+                                        </div>
+
+                                </div>
+
+                </li>
+                <%}%>
+
+
+                    <input type="radio" name="accordion" id="third">
+                    <label for="third">Department 3</label>
+
+                    <div class="acc-content">
+
+                        <div class="department">
+                            <div class="department-doctors">
+
+                                <div class="thumb-doctor">
+
+                                    <img src="./images/doctor.png" alt="doctor" height="100px" id="dp">
+                                    <p id="doctor-name" class="name">Munna Vai</p>
+
+                                    <div class="details">
+
+                                        <p class="degree">M.B.B.S.</p>
+                                        <p class="college">Osmani Medical College, Sylhet</p>
+
+                                    </div>
+                                    <nav>
+                                        <a href="#">View Profile</a><br>
+                                        <a href="#">Book an Appointment</a>
+                                    </nav>
+
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                    <nav>
-                        <a href="#">View Profile</a><br>
-                        <a href="#">Book an Appointment</a>
-                    </nav>
-    
-                </div>
-    
-            </div>
-        </div>
+                    </li>
+        </ul>
 
     </div>
-        
+
     <!-- <script src="style.js"></script> -->
+     
 
-</body>
+    </body>
 
-</html>
+    <script>
+
+        function load_data(query = '')
+        {
+            fetch('/get_data?search_query='+query+'').then(function(response){
+    
+                return response.json();
+                console.log(response.json());
+    
+            }).then(function(responseData){
+    
+                var html = '<ul class="list-group">';
+    
+                if(responseData.length > 0) {
+    
+                    for(var count = 0; count < responseData.length; count++)
+                    {
+                        html += `<form action="/doctor-profile-patient" method="post">
+                            <button class="list-doctors" name = "name" 
+                                value= ${responseData[count].doctor_id}>`+ 
+                                responseData[count].doctor_name + ` . ` + 
+                                responseData[count].department_name + ` . ` +`</button> </form> `;
+                    }
+                }
+                else
+                {
+                    html += '<a href="#" class="list-doctors">No Doctor of Such Record Found</a>';
+                }
+    
+                html += '</ul>';
+    
+    document.getElementById('search_result').innerHTML = html;
+    
+            });
+        }
+    
+        var search_element = document.getElementById("autocomplete_search");
+    
+        search_element.onkeyup = function(){
+    
+            var query = search_element.value;
+    
+            load_data(query);
+    
+        };
+    
+        // search_element.onfocus = function(){
+    
+        //     var query = search_element.value;
+    
+        //     load_data(query);
+    
+        // };
+    
+        // function get_text(event)
+        // {
+        //     var country_name = event.textContent;
+    
+        //     console.log(country_name);
+    
+        //     document.getElementById('autocomplete_search').value = country_name;
+    
+        //     document.getElementById('search_result').innerHTML = '';
+        // }
+    
+    </script>
+    </html>
