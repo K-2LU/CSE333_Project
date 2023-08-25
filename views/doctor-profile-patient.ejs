@@ -1,0 +1,72 @@
+<%- include("header") %>
+
+    <div class="content">
+
+        <div class="view-profile">
+            <div class="view-info">
+                <div class="name" id="name">
+                    Name:<t>
+                        <%= data[0].name %>
+                </div>
+                <div class="id" id="id">
+                    ID: <t>
+                        <%= data[0].id %>
+                </div>
+                <div class="speciality" id="">
+                    Speciality:<t>
+                        <%= dept %>
+                </div>
+                <div class="degree" id="name">
+                    Degree:<t>
+                        <%=data[0].degree%>
+                </div>
+                <div class="academics" id="name">
+                    College:<t>
+                        <%=data[0].college%>
+                </div>
+                <div class="room-no" id="name">
+                    Room No:<t>
+                        <%=data[0].room_no%>
+                </div>
+                <div class="content1">
+                    <form action="/form-book" method="post">
+                        <div>
+                            <button type="submit" class="book" name="name" , value=<%=data[0].id %>>Book an Appoitment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="view-image">
+                <% var imgDir="./images/" + data[0].id.toString() + ".jpg" %>
+                    <img src="<%= imgDir %>" alt="doctor">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <script src="style.js"></script> -->
+    <div class="contact-us">
+        
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p>Phone: +91 1234567890</p>
+            <p>Email: ghbd@gmail.com </p>
+        </div>
+
+        <div class="contact">
+            <h3>Address</h3>
+            <p>3<sup>rd</sup> floor </p>
+            <p>IICT Building, SUST</p>
+        </div> 
+
+        <div class="contact">
+            <h3>File a Complaint</h3>
+            <p>Phone: +91 1234567890</p>
+            <p>Email: ghbd@gmail.com </p>
+        </div>
+
+    </div>
+    </body>
+
+    </html>

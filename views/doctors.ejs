@@ -1,0 +1,168 @@
+<%- include("header") %>
+
+    <div class="content">
+        
+        <div class="search-bar">
+            <input type="text" id="autocomplete_search" class="form-control form-control-lg"
+                placeholder="Live Search(Doctor Name, Department, ID)" />
+    
+            <ul id="search_result" class="search_result"></ul>
+        </div>
+
+
+        <ul class="accordion">
+            <% for(var i=0; i<result1.length; i++) { %>
+                <li>
+                    <%if(i===0){%>
+                        <input type="radio" name="accordion" id=<%=result1[i].dept_id%> checked>
+                        <%} else {%>
+                            <input type="radio" name="accordion" id=<%=result1[i].dept_id%>>
+                            <%}%>
+
+                                <label for=<%=result1[i].dept_id%>>
+                                    <%=result1[i].dept_name%>
+                                </label>
+
+                                <div class="acc-content">
+                                    <% const dId=result1[i].dept_id%>
+                                        <div class="department">
+                                            <div class="department-doctors">
+
+                                                <% for(var j=0; j<result2.length; j++) {%>
+                                                    <%if(result2[j].dept_id===dId){%>
+                                                        <div class="thumb-doctor">
+                                                            <% var imgDir="./images/" + result2[j].id.toString()
+                                                                + ".jpg" %>
+                                                                <img src="<%=imgDir %>" alt="doctor" height="100px"
+                                                                    id="dp">
+                                                                <p id="doctor-name" class="name">
+                                                                    <%=result2[j].name%>
+                                                                </p>
+
+                                                                <div class="details">
+
+                                                                    <p class="degree">
+                                                                        <%=result2[j].degree%>
+                                                                    </p>
+                                                                    <p class="college">
+                                                                        <%=result2[j].college%>
+                                                                    </p>
+
+                                                                </div>
+                                                                <form action="/doctor-profile-patient" method="post">
+
+                                                                    <div class="login-button">
+                                                                        <button type="submit" class="book" name="name" ,
+                                                                            value=<%=result2[j].id %>>View
+                                                                            Profile</button>
+                                                                    </div>
+                                                                </form>
+                                                                <form action="/form-book" method="post">
+                                                                    <div class="login-button">
+                                                                        <button type="submit" class="book" name="name" ,
+                                                                            value=<%=result2[j].id %>>Book an Appoitment
+                                                                        </button>
+                                                                    </div>
+                                                                </form>
+
+                                                        </div>
+
+                                                        <%}%>
+
+                                                            <%}%>
+
+                                                                <!-- changes made -->
+
+                                            </div>
+                                        </div>
+
+                                </div>
+
+                </li>
+                <%}%>
+        </ul>
+
+    </div>
+
+    <!-- <script src="style.js"></script> -->
+     
+    <div class="contact-us">
+        
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p>Phone: +91 1234567890</p>
+            <p>Email: ghbd@gmail.com </p>
+        </div>
+
+        <div class="contact">
+            <h3>Address</h3>
+            <p>3<sup>rd</sup> floor </p>
+            <p>IICT Building, SUST</p>
+        </div> 
+
+        <div class="contact">
+            <h3>File a Complaint</h3>
+            <p>Phone: +91 1234567890</p>
+            <p>Email: ghbd@gmail.com </p>
+        </div>
+
+    </div>
+    </body>
+
+    <script>
+
+        function load_data(query = '')
+        {
+            fetch('/get_data?search_query='+query+'').then(function(response){
+    
+                return response.json();
+                console.log(response.json());
+    
+            }).then(function(responseData){
+    
+                var html = '<ul class="list-group">';
+    
+                if(responseData.length > 0) {
+    
+                    for(var count = 0; count < responseData.length; count++)
+                    {
+                        html += `<form action="/doctor-profile-patient" method="post">
+                            <button class="list-doctors" name = "name" 
+                                value= ${responseData[count].doctor_id}>`+ 
+                                responseData[count].doctor_name + ` . ` + 
+                                responseData[count].department_name + ` . ` +`</button> </form> `;
+                    }
+                }
+                else
+                {
+                    html += '<a href="#" class="list-doctors">No Doctor of Such Record Found</a>';
+                }
+    
+                html += '</ul>';
+    
+    document.getElementById('search_result').innerHTML = html;
+    
+            });
+        }
+    
+        var search_element = document.getElementById("autocomplete_search");
+    
+        search_element.onkeyup = function(){
+    
+            var query = search_element.value;
+    
+            load_data(query);
+    
+        };
+    
+document.getElementById("scrollToBottom").addEventListener("click", function(event) {
+    event.preventDefault();
+    scrollToBottom();
+  });
+  
+  function scrollToBottom() {
+    // Scroll smoothly to the bottom of the page
+    document.body.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }
+    </script>
+    </html>

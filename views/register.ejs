@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="content">
+
+        <div class="login-container">
+
+            <img src="./images/gh_logo.png" alt="" height="50px">
+
+            <form action="/register" method="post">
+
+                <div class="input-box">
+                    <div class="labelInfo">Name: </div>
+                    <input type="text" id="identity" placeholder="Name" name="name" required>
+                </div>
+
+                <div class="input-box">
+                    <div class="labelInfo">Phone No.: </div>
+                    <input type="text" id="identity" placeholder="Phone Number or ID" name="phone" required>
+                </div>
+
+                <div class="input-box">
+                    <div class="labelInfo">Key: <sub>(this will be used to log in to your profile)</sub> </div>
+                    <input type="password" id="password" placeholder="Key" name="password" required>
+                </div>
+
+                <div class="login-button">
+                    <button class="book" type="submit">Register</button>
+                </div>
+
+            </form>
+
+            <a href="/login">
+                Log in to your profile
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="style.js"></script>
+</body>
+
+</html>
