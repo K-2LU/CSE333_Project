@@ -75,7 +75,7 @@ Overall, the database acts as a reliable and structured repository that facilita
 ### Logged in as a patient:
 <img src = "./images/gh_logged_me.jpeg">
 
-### A Doctor's Page:
+### A Patient's Page:
 <img src = "./images/gh_done.jpeg">
 
 ### Dr House in the House:

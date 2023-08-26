@@ -45,15 +45,15 @@ function generateRandomString(length) {
 }
 
 app.get("/", function (req, res) {
-    res.render("userhomepage", { ok: ok, uId: uId, uType: uType, uName: uName });
+    res.render("userhomepage", { ok: ok, uId: uId, uType: uType, uName: uName, title: "Welcome" });
 });
 
 app.get("/tests", function (req, res) {
-    res.render("tests", { ok: ok, uId: uId, uType: uType, uName: uName });
+    res.render("tests", { ok: ok, uId: uId, uType: uType, uName: uName, title: "Tests" });
 });
 
 app.get("/pricing", function (req, res) {
-    res.render("pricing", { ok: ok, uId: uId, uType: uType, uName: uName });
+    res.render("pricing", { ok: ok, uId: uId, uType: uType, uName: uName, title: "Our Pricings" });
 });
 
 //---------------------------------------------------------for user------------------------------------
@@ -90,7 +90,7 @@ app.get("/doctors", (req, res) => {
         getFromServer(query, value).then(data => {
             result2 = data;
             //console.log(result2);
-            res.render("doctors", { result1: result1, result2: result2, ok: ok, uId: uId, uType: uType, uName: uName });
+            res.render("doctors", { result1: result1, result2: result2, ok: ok, uId: uId, uType: uType, uName: uName, title: "Doctors" });
         });
     }).catch(err => {
         console.log(err);
@@ -109,10 +109,11 @@ app.post("/doctor-profile-patient", (req, res) => {
         } else {
             //console.log(data);
             dept_id = data[0].dept_id;
+            var doctorName = data[0].name;
             db.query("Select * from department where dept_id = ?", [dept_id], (err, dt) => {
                 //console.log(dt);
                 dept = dt[0].dept_name;
-                res.render("doctor-profile-patient", { data: data, dept: dept, ok: ok, uId: uId, uType: uType, uName: uName });
+                res.render("doctor-profile-patient", { data: data, dept: dept, ok: ok, uId: uId, uType: uType, uName: uName, title: doctorName });
             });
 
         }
@@ -136,7 +137,7 @@ app.post("/form-book", (req, res) => {
                 //console.log(dt);
                 dept = dt[0].name;
                 id = uId;
-                res.render("form-book", { data: data, dept: dept, ok: ok, uId: uId, uType: uType, uName: uName });
+                res.render("form-book", { data: data, dept: dept, ok: ok, uId: uId, uType: uType, uName: uName, title: "Book an Appointment" });
             });
         }
 
@@ -212,11 +213,11 @@ app.post("/appointment", async(req, res) => {
 
         res.render("form-success", { 
             
-            ok: ok, uId: uId, uType: uType, key: key, flag: exists,
+            ok: ok, uId: uId, uType: uType, key: key, flag: exists, title: "Appointment Successful",
             uName:uName,d_name: d_name, p_name: name, date: date, time: time, room:room
         });
     }   else    {
-        res.render("form-fail");
+        res.render("form-fail", {title: "Appointment Failed"});
     }
 });
 
@@ -238,7 +239,7 @@ app.post("/login", (req, res) => {
             if(uType == "patient") uName = "patient"; 
             db.query(`Select name from ${uName} where id = ?`, [uId], (err, dt) => {
                 uName = dt[0].name;
-                res.render("userhomepage", { ok: ok, uId: uId, uType: uType, uName: uName});
+                res.render("userhomepage", { ok: ok, uId: uId, uType: uType, uName: uName, title: "Welcome"});
             });
 
             
@@ -277,7 +278,7 @@ app.get("/doctor-profile", (req, res) => {
         db.query("select * from doctor, department where doctor.dept_id = department.dept_id and doctor.id = ?"
             , [id], (err, data) => {
                 console.log(result);
-                res.render("doctor-profile", { ok: ok, uId: uId, uType: uType, result: result, data: data, uName:uName});
+                res.render("doctor-profile", { ok: ok, uId: uId, uType: uType, result: result, data: data, uName:uName, title: "Doctor Profile"});
             })
 
     });
@@ -301,7 +302,7 @@ app.get("/history", (req, res) => {
         db.query("select * from doctor, department where doctor.dept_id = department.dept_id and doctor.id = ?"
             , [id], (err, data) => {
                 //console.log(data);
-                res.render("doctor-profile-history", { ok: ok, uId: uId, uType: uType, result: result, data: data, uName:uName });
+                res.render("doctor-profile-history", { ok: ok, uId: uId, uType: uType, result: result, data: data, uName:uName, title: "History" });
             })
 
     });
@@ -314,7 +315,7 @@ app.get("/future", (req, res) => {
         db.query("select * from doctor, department where doctor.dept_id = department.dept_id and doctor.id = ?"
             , [id], (err, data) => {
                 //console.log(data);
-                res.render("doctor-profile-future", { ok: ok, uId: uId, uType: uType, result: result, data: data, uName:uName });
+                res.render("doctor-profile-future", { ok: ok, uId: uId, uType: uType, result: result, data: data, uName:uName, title: "Future Appointments" });
             })
 
     });
@@ -333,7 +334,7 @@ app.get("/patient-profile", (req, res) => {
             db.query("select * from patient where id = ?", [id], (er, dt) => {
                 //console.log(dt);
                 res.render("patient-profile", {
-                    ok: ok, uId: uId, uType: uType,
+                    ok: ok, uId: uId, uType: uType, title: "Profile",
                     result: result, data: data, name: dt, uName:uName
                 });
             });

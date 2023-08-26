@@ -516,8 +516,7 @@
   }
   
   .accordion input[type="radio"]:checked + label + .acc-content {
-    
-    max-height: 800px;
+    max-height: 1500px;
     padding: 10px 10px 20px;
   }
   
