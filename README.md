@@ -1,5 +1,10 @@
 ## Project Name: __General Doctor Appointment System__
 
+### Contributors
+
+<a href="github.com/K-2LU">Rigan Mahmud Chowdhury</a>
+<a href="github.com/Naimul-2019331065">Naimul Haque Nahin</a>
+
 ### Goal:
 * To ease the doctor in keeping track of the patients he has checked   
 ---
