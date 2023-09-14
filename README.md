@@ -1,7 +1,7 @@
 ## Project Name: __General Doctor Appointment System__
 
-### Collaborators:  
-__Rigan Mahmud Chowdhury__, Github: <a href="github.com/K-2LU">K-2LU</a>
+### Developers:  
+__Rigan Mahmud Chowdhury__, Github: <a href="github.com/K-2LU">K-2LU</a>    
 __Naimul Haque Nahin__, Github: <a href="github.com/Naimul-2019331065">Naimul-2019331065</a>
 
 
